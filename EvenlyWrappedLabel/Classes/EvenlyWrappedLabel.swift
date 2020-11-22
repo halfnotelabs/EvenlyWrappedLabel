@@ -37,7 +37,7 @@ import UIKit
      of words on the top line.
  
  */
-public class EvenlyWrappedLabel: UILabel {
+open class EvenlyWrappedLabel: UILabel {
     /**
      Set to true to force the text to take up every single line, even if the
      text is short enough to fit on fewer lines.
