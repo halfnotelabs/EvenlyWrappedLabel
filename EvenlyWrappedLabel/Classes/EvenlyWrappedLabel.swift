@@ -72,7 +72,7 @@ open class EvenlyWrappedLabel: UILabel {
     private var isUsingAttributedText = false
     
     public override var intrinsicContentSize: CGSize {
-        guard wrapsEvenly else { return super.intrinsicContentSize
+        guard wrapsEvenly else { return super.intrinsicContentSize }
 
         guard shouldUseFontLineHeightAsMaxHeight == false else {
             return CGSize(width: super.intrinsicContentSize.width,
@@ -83,7 +83,7 @@ open class EvenlyWrappedLabel: UILabel {
     }
     
     public override func drawText(in rect: CGRect) {
-        guard wrapsEvenly else { return super.drawText(in: rect)
+        guard wrapsEvenly else { return super.drawText(in: rect) }
 
         let width = findMinimumWidth(maxHeight: findMaxHeight,
                                      maxWidth: frame.width,
