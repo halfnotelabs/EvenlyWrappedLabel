@@ -39,6 +39,12 @@ import UIKit
  */
 open class EvenlyWrappedLabel: UILabel {
     /**
+     Set to false to disable even wrapping for this label.
+     */
+    public var wrapsEvenly: Bool = true
+
+
+    /**
      Set to true to force the text to take up every single line, even if the
      text is short enough to fit on fewer lines.
      
@@ -66,6 +72,8 @@ open class EvenlyWrappedLabel: UILabel {
     private var isUsingAttributedText = false
     
     public override var intrinsicContentSize: CGSize {
+        guard wrapsEvenly else { return super.intrinsicContentSize
+
         guard shouldUseFontLineHeightAsMaxHeight == false else {
             return CGSize(width: super.intrinsicContentSize.width,
                           height: findMaxHeight)
@@ -75,6 +83,8 @@ open class EvenlyWrappedLabel: UILabel {
     }
     
     public override func drawText(in rect: CGRect) {
+        guard wrapsEvenly else { return super.drawText(in: rect)
+
         let width = findMinimumWidth(maxHeight: findMaxHeight,
                                      maxWidth: frame.width,
                                      testWidth: frame.width / 2.0,
