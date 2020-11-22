@@ -41,7 +41,7 @@ open class EvenlyWrappedLabel: UILabel {
     /**
      Set to false to disable even wrapping for this label.
      */
-    public var wrapsEvenly: Bool = true
+    @IBInspectable public var wrapsEvenly: Bool = false
 
 
     /**
